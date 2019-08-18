@@ -1,0 +1,14 @@
+// Example Usage:
+//
+// .navigation {
+//   display: flex;
+//
+//   @include screen-below($tablet-width) {
+//     display: none;
+//   }
+// }
+@mixin screen-below($screen-size) {
+  @media only screen and (max-width: $screen-size) {
+    @content;
+  }
+}

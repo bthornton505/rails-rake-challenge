@@ -1,0 +1,42 @@
+.hero {
+  background: linear-gradient(to bottom right, rgba($blue, .3), rgba($red, .3)),
+              url('union-station.jpg') top -20em center/cover fixed;
+  height: 25em;
+  position: relative;
+
+  @include screen-below($desktop) {
+    background: linear-gradient(to bottom right, rgba($blue, .3), rgba($red, .3)),
+                url('union-station.jpg') top -10em center/cover fixed;
+    height: 15em;
+  }
+}
+
+
+.hero__content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+  width: $desktop-width;
+
+  @include screen-below($desktop) {
+    width: 100%;
+  }
+}
+
+
+.hero__heading {
+  color: $white;
+  line-height: 2;
+  margin: auto 0 0;
+  text-shadow: 0 .125rem .125rem $black;
+
+  @include screen-below($tablet) {
+    text-align: center;
+    font-size: $h2-font-size;
+  }
+
+  @include screen-below($mobile) {
+    font-size: $h3-font-size;
+  }
+}

@@ -1,0 +1,5 @@
+.restaurants__title {
+  @include screen-below($mobile) {
+    text-align: center;
+  }
+}

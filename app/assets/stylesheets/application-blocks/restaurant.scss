@@ -1,0 +1,45 @@
+$restaurant-image-width: 12.188rem;
+
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5em;
+}
+
+
+.restaurant__address {
+  align-self: center;
+  max-width: $restaurant-image-width;
+}
+
+
+.restaurant__image {
+  border-radius: $base-border-radius;
+  margin-bottom: 1em;
+}
+
+
+.restaurant__name {
+  align-self: center;
+  margin-top: 0;
+  max-width: $restaurant-image-width;
+  text-align: center;
+}
+
+
+.restaurant__pagination {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em auto;
+  width: 10em;
+}
+
+
+.restaurant__reserve {
+  @include button;
+
+  align-self: center;
+  margin-top: 1em;
+}

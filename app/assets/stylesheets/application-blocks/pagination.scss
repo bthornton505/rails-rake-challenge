@@ -1,0 +1,25 @@
+.pagination__current-page {
+  color: $red;
+  font-weight: bold;
+}
+
+
+.pagination__link {
+  color: $black;
+  outline: 0;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.pagination__link--inactive {
+  color: $grey;
+  cursor: not-allowed;
+  text-decoration: line-through;
+
+  &:hover {
+    text-decoration: line-through;
+  }
+}
+

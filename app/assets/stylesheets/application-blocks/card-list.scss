@@ -1,0 +1,29 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -$card-list-gutter;
+
+  @include screen-below($desktop) {
+    margin: calc(-#{$card-list-gutter} / 4);
+  }
+
+  @include screen-below($mobile) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+
+
+.card-list__item {
+  @include card;
+
+  margin: $card-list-gutter;
+
+  @include screen-below($desktop) {
+    margin: calc(#{$card-list-gutter} / 4);
+  }
+
+  @include screen-below($mobile) {
+    align-self: center;
+  }
+}

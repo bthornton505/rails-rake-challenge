@@ -1,0 +1,24 @@
+.hero
+  .hero__content-container
+    %h1.hero__heading Denver's Open Tables
+
+.page
+  .page__content
+    %h2.restaurants__title Restaurants
+
+    -#.restaurants__container{ 'data-controller': 'restaurants', 'data-restaurants-endpoint': 'https://opentable.herokuapp.com/api/restaurants?city=denver&state=co' }
+    .restaurants__container{ 'data-controller': 'restaurants', 'data-restaurants-endpoint': '/v1/restaurants' }
+      .card-list{ 'data-target': 'restaurants.container' }
+
+      %template{ 'data-target': 'restaurants.template' }
+        .restaurant.card-list__item
+          %img.restaurant__image
+          %h3.restaurant__name Restaurant Name
+          .restaurant__address Restaurant Address
+          = link_to 'Make Reservation', '#', target: :blank, class: 'restaurant__reserve'
+
+      %template{ 'data-target': 'restaurants.paginationTemplate' }
+        .restaurant__pagination.pagination
+          = link_to 'Prev', '#', 'data-action': 'click->restaurants#previousPage', 'data-target': 'restaurants.paginationPrev', class: 'pagination__link'
+          %p.pagination__current-page{ 'data-target': 'restaurants.currentPage' } 1
+          = link_to 'Next', '#', 'data-action': 'click->restaurants#nextPage', 'data-target': 'restaurants.paginationNext', class: 'pagination__link'
