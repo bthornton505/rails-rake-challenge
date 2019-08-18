@@ -152,12 +152,19 @@ export default class extends Controller {
 
   _updatePaginationUi(page) {
     this.currentPage = page
+
+    // This variable will give me the total of restaurants returned from the AJAX request
+    let restaurants = this.restaurants[page - 1].size
+    console.log(restaurants)
     const inactiveClass = 'pagination__link--inactive'
 
     if (page === 1) {
       this.paginationPrevTargets.map(link => link.classList.add(inactiveClass))
+    } else if (restaurants < 24) {
+      this.paginationNextTargets.map(link => link.classList.add(inactiveClass))
     } else {
       this.paginationPrevTargets.map(link => link.classList.remove(inactiveClass))
+      this.paginationNextTargets.map(link => link.classList.remove(inactiveClass))
     }
   }
 }
